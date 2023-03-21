@@ -17,7 +17,7 @@ def main():
     title = print(input("To start out, give your project a title. Keep it as short as you can, 2 to 3 words:\n"))
     # overview input
     project_overview = print(input(
-        "First, describe what project you made. Keep this as specific as you can. Recommended 3-5 sentences. Explain it like a short elevator pitch to a colleague or friend:\n"))
+        "Now, describe what project you made. Keep this as specific as you can. Recommended 3-5 sentences. Explain it like a short elevator pitch to a colleague or friend:\n"))
 
     # developers list input
     developers_str = print(input("Next, say the full names (first & last) of everyone on your team (including you). If this was a solo project, say only your full name. Separate full names with commas and spaces! Example input: Nate Lalor, Johnny Appleseed, Hi Mom:\n"))
@@ -46,6 +46,13 @@ def main():
     # tell user heres your md file!
     # now you can add it to your project and upload it to your GitHub, GitLab, or more!
 
+    #COMMENTED OUT FOR TESTING:
+    # fo = open("WOWREADME.md" , "w")
+    # fo.write(md_file)
+    # fo.close()
+    # print("Your new beautiful readme has been created with the name \"WOWREADME.md\"! You can now add it
+    #           to your project and upload it to your GitHub, GitLab, or more! Enjoy!")
+
 def formatter(title, project_overview, developers_list, materials, process, extra_info):
     md_file = ""
     extra_info_bool = True
@@ -58,12 +65,14 @@ def formatter(title, project_overview, developers_list, materials, process, extr
         # scrap extra info section here
         extra_info_bool = False
 
+    # =========== FILE FORMATTING BEGINS ============
+
 
     if (extra_info_bool):
         # dont print this, but just add it
         print("Want to learn more? You're in luck! ")
 
-    # return md_file
 
+    return md_file
 
 main()
