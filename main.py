@@ -5,16 +5,32 @@ from time import sleep
 
 def main():
 
-    project_overview = ""
+    profile_project = True
 
     print("--------------------------")
-    print("Welcome to the Readme Template Creator. You will be prompted with a few small free-response questions that will help define the content of the readme. Once you finish the prompts, it will generate a file for you that contains all of your information as a beautifully made markdown file (.md) that you can then use as a readme.")
-    print("The goal of this project is to assist you in making a useful and informative readme for projects to save you the trouble.")
+    print("Welcome to the Readme Template Creator. The goal of this project is to assist you in making a useful and informative readme for projects to save you the trouble.")
+
+    type = input("Is this a personal profile readme, or a readme for a specific project?\n")
+
+    # /////// NOTE FROM LATEST WORK ////////////
+    # this format of typing into console is gross. Find a better way. I don't want to have to host a website just for this silly little project, but this is gross. also the while loop below this and if statement below this does not work. so, figure out how to do input better using the line above this. if its a personal project it will include different things like github stats, activity, repo number, stars, etc. if its a specific project we USE THE PROMPTS BELOW!
+
+
+    while type != "personal project" or "specific project" or "sp" or "project" or "repo" or "repository" or "spec proj" or "specific proj" or "personal profile readme" or "personal profile" or "pp" or "personal" or "profile" or "profile readme" or "personal readme" or "individual readme" or "individual profile":
+        type = input("Sorry, I didn't understand. Try to tell me again:\n")
+    if type == "personal project" or "specific project" or "sp" or "project" or "repo" or "repository" or "spec proj" or "specific proj":
+        print("Great! Let's get started!")
+        project_profile = False
+
+    # if project_profile:
+
+    print("You will be prompted with a few small free-response questions that will help define the content of the readme. Once you finish the prompts, it will generate a file for you that contains all of your information as a beautifully made markdown file (.md) that you can then use as a readme.")
     print("--------------------------")
     sleep(10)
     # ========= inputs start here ==========
     # title input
-    title = print(input("To start out, give your project a title. Keep it as short as you can, 2 to 3 words:\n"))
+    title = print(input(
+        "To start out, give your project a title. Keep it as short as you can, 2 to 3 words:\n"))
     # overview input
     project_overview = print(input(
         "Now, describe what project you made. Keep this as specific as you can. Recommended 3-5 sentences. Explain it like a short elevator pitch to a colleague or friend:\n"))
@@ -46,12 +62,13 @@ def main():
     # tell user heres your md file!
     # now you can add it to your project and upload it to your GitHub, GitLab, or more!
 
-    #COMMENTED OUT FOR TESTING:
-    # fo = open("WOWREADME.md" , "w")
+    # COMMENTED OUT FOR TESTING:
+    # fo = open("GEN_README.md" , "w")
     # fo.write(md_file)
     # fo.close()
-    # print("Your new beautiful readme has been created with the name \"WOWREADME.md\"! You can now add it
+    # print("Your new beautiful readme has been created with the name \"GEN_README.md\"! You can now add it
     #           to your project and upload it to your GitHub, GitLab, or more! Enjoy!")
+
 
 def formatter(title, project_overview, developers_list, materials, process, extra_info):
     md_file = ""
@@ -67,12 +84,11 @@ def formatter(title, project_overview, developers_list, materials, process, extr
 
     # =========== FILE FORMATTING BEGINS ============
 
-
     if (extra_info_bool):
         # dont print this, but just add it
         print("Want to learn more? You're in luck! ")
 
-
     return md_file
+
 
 main()
